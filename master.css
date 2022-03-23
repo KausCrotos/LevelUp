@@ -1,47 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 :root {
-  --max-width: 1200px;
+  --max-width: 1600px;
   --bg-video-height: 100vh;
-  --bg-video-content: -100vh;
+  --promo_content-padding: 20px;
+  --min-wh: 320px;
 }
 
 body {
   all: unset;
   font-family: "Fira Sans", sans-serif;
   line-height: 130%;
-  }
+    }
 
 img {
   width: 100%;
 }
 
 .content {
-  min-width: 320px;
+  min-width: var(--min-wh);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .promo {
-    }
+  position: relative;
+}
 
-.fix {
-  position: sticky;
-  top: 0;
+.promo_video {
+  position: absolute;
   height: var(--bg-video-height);
   overflow: hidden;
   z-index: -1;
-  }
+}
 
 .bg_video {
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  max-width: var(--max-width);
+  min-height: var(--bg-video-height);
 }
 
 .promo_content {
-  margin-top: var(--bg-video-content);
-  min-height: var(--bg-video-height);
-  box-sizing: border-box;
-  padding: 20px;
+  height: var(--bg-video-height);
+  overflow: hidden;
+}
+
+.product {
+  display: grid;
+  height: calc(var(--bg-video-height) - var(--promo_content-padding)*2);
+  grid-template-columns: minmax(140px, 600px) minmax(140px, 600px);
+  justify-content: center;
+  align-content: center;
+  padding: var(--promo_content-padding);
+}
+.box {
+  border: 1px solid red;
+  border-radius: 25px;
+}
+
+.product-name {
+  grid-area: 1 / span 2;
+}
+
+.product-photo {
+  grid-area: 2 span / 1 ;
+}
+
+.product-list {
+  grid-area: 2 / 2;
+}
+
+.product-button {
+  grid-area: 3 / 2;
 }
