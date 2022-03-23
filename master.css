@@ -18,6 +18,7 @@ body {
   all: unset;
   font-family: "Fira Sans", sans-serif;
   line-height: 130%;
+  scrollbar-width: thin;
 }
 
 img {
@@ -34,9 +35,14 @@ img {
   scroll-snap-type: y proximity;
 }
 
+.content::-webkit-scrollbar {
+    width: 7px;
+    background-color: #f9f9fd;
+}
+
 .block {
   scroll-snap-align: start;
-  height: var(--bg-video-height);
+  height: inherit;
   min-height: var(--min-h);
 }
 
