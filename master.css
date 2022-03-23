@@ -1,36 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 :root {
-  --max-width: 1600px;
+  --min-w: 320px;
+  --min-h: 375px;
+  --max-width: 1200px;
   --bg-video-height: 100vh;
-  --promo_content-padding: 20px;
-  --min-wh: 320px;
+  --promo-content-padding: 20px;
 }
 
 body {
   all: unset;
   font-family: "Fira Sans", sans-serif;
   line-height: 130%;
-    }
+}
 
 img {
   width: 100%;
 }
 
 .content {
-  min-width: var(--min-wh);
+  width: 100vw;
+  min-width: var(--min-w);
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
 .promo {
-  position: relative;
+  display: grid;
 }
 
 .promo_video {
-  position: absolute;
-  height: var(--bg-video-height);
-  overflow: hidden;
+  grid-area: 1 / 1;
+  background: blue;
+  line-height: 0;
   z-index: -1;
 }
 
@@ -38,22 +40,24 @@ img {
   object-fit: cover;
   width: 100%;
   max-width: var(--max-width);
-  min-height: var(--bg-video-height);
+  height: var(--bg-video-height);
+  min-height: var(--min-h);
 }
 
 .promo_content {
-  height: var(--bg-video-height);
-  overflow: hidden;
+  grid-area: 1 / 1;
 }
 
 .product {
   display: grid;
-  height: calc(var(--bg-video-height) - var(--promo_content-padding)*2);
+  height: var(--bg-video-height);
+  min-height: var(--min-h);
   grid-template-columns: minmax(140px, 600px) minmax(140px, 600px);
   justify-content: center;
   align-content: center;
-  padding: var(--promo_content-padding);
+  padding: 0 var(--promo-content-padding);
 }
+
 .box {
   border: 1px solid red;
   border-radius: 25px;
@@ -64,7 +68,7 @@ img {
 }
 
 .product-photo {
-  grid-area: 2 span / 1 ;
+  grid-area: span 2 / 1 ;
 }
 
 .product-list {
