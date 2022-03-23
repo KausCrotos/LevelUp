@@ -23,6 +23,14 @@ img {
   min-width: var(--min-w);
   max-width: var(--max-width);
   margin: 0 auto;
+  overflow-y: auto;
+  scroll-snap-type: block;
+}
+
+.block {
+  scroll-snap-align: start;
+  height: var(--bg-video-height);
+  min-height: var(--min-h);
 }
 
 .promo {
@@ -77,4 +85,7 @@ img {
 
 .product-button {
   grid-area: 3 / 2;
+}
+
+.ingredient {
 }
