@@ -8,6 +8,12 @@
   --promo-content-padding: 20px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   all: unset;
   font-family: "Fira Sans", sans-serif;
@@ -23,7 +29,9 @@ img {
   min-width: var(--min-w);
   max-width: var(--max-width);
   margin: 0 auto;
-  scroll-snap-type: block;
+  height: var(--bg-video-height);
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
 }
 
 .block {
